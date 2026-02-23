@@ -680,3 +680,22 @@ footer {
   .timeline-item::before { display: none; }
   .timeline-date { padding-top: 0; }
 }
+
+.hero-identity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.hero-photo {
+    width: 140px;
+    height: 180px;
+    object-fit: cover;
+    object-position: 60% center; /* centra sulla tua figura */
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    flex-shrink: 0;
+    filter: grayscale(20%) contrast(1.05);
+}

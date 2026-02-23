@@ -58,6 +58,9 @@
         <div class="hero-tag reveal">Disponibile per opportunità</div>
         <h1 class="hero-name reveal">Luca<br>Casalone</h1>
         <div class="hero-title reveal">Junior Web Developer</div>
+        <div class="hero-photo-wrap">
+          <img src="{{ asset('img/me.jpg') }}" alt="Luca Casalone" class="hero-photo">
+        </div>
         <p class="hero-desc reveal">
         Sviluppo siti web e applicazioni moderne, con attenzione alla struttura del codice,
         all'esperienza utente e alle performance. Specializzato nello stack PHP/Laravel + JavaScript.
@@ -70,19 +73,18 @@
         <a href="#percorso" class="btn-secondary">Il mio percorso →</a>
         </div>
     </div>
-
     <div class="hero-right">
         <div class="hero-card reveal">
             <div class="hero-card-label">// Stack tecnologico</div>
             <div class="hero-stack">
                 <span class="tag amber">PHP</span>
                 <span class="tag amber">Laravel</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">HTML</span>
+                <span class="tag amber">JavaScript</span>
+                <span class="tag amber">HTML</span>
                 <span class="tag">CSS</span>
                 <span class="tag">Bootstrap</span>
                 <span class="tag">Tailwind CSS</span>
-                <span class="tag">MySQL</span>
+                <span class="tag amber">MySQL</span>
             </div>
             <div class="hero-stat">
                 <span class="stat-label">// Formazione</span>
@@ -94,7 +96,7 @@
             </div>
             <div class="hero-stat">
                 <span class="stat-label">// Progetti Attivi</span>
-                <span class="stat-value">3 in sviluppo</span>
+                <span class="stat-value">4 in sviluppo</span>
             </div>
             <div class="hero-stat">
                 <span class="stat-label">// Posizione</span>

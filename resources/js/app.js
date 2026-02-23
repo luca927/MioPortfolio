@@ -81,3 +81,29 @@ window.addEventListener('scroll', () => {
         a.style.color = a.getAttribute('href') === '#' + current ? 'var(--text)' : '';
     });
 });
+
+// ── Smooth Scroll personalizzato (più lento) ──
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            e.preventDefault(); // Blocca lo scatto immediato del browser
+            
+            // Chiudi il menu mobile se è aperto (opzionale, visto che hai toggleMenu)
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu && mobileMenu.classList.contains('open')) {
+                mobileMenu.classList.remove('open');
+            }
+
+            const offsetTop = targetElement.offsetTop - 70; // Sottrai l'altezza del tuo header
+
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth' 
+            });
+        }
+    });
+});
