@@ -1,4 +1,46 @@
 import './bootstrap';
+import '../css/app.css';
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Navbar from './components/navbar';
+import Hero from './components/hero';
+import Skills from './components/skills';
+import Projects from './components/projects';
+import Timeline from './components/timeline';
+import ContactForm from './components/contactForm';
+import Footer from './components/footer';
+
+function App() {
+    return (
+        <div className="app-container">
+            <Navbar />
+            <Hero />
+            <Skills />
+            <Projects />
+            <Timeline />
+            <ContactForm />
+            <Footer />
+            {/* Qui metteremo gli altri pezzi man mano */}
+        </div>
+    );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('portfolio'));
+root.render(<App />);
+
+// 2. ESEGUI il render (Servi a tavola)
+const container = document.getElementById('portfolio');
+
+if (container) {
+    const root = ReactDOM.createRoot(container);
+    root.render(
+        <React.StrictMode>
+            <App /> 
+        </React.StrictMode>
+    );
+}
+
 
 // ── Mobile menu ──
 function toggleMenu() {

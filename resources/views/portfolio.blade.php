@@ -9,11 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 
   {{-- Vite compila e inietta automaticamente app.css e app.js --}}
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
+  @viteReactRefresh
+  @vite(['resources/css/app.css', 'resources/js/app.jsx'])
 </head>
 <body>
+<div id="portfolio"></div> 
 
-<!-- Navbar -->
+    @vite(['resources/js/app.jsx'])
+<!-- Navbar 
  <nav>
     <a href="#hero" class="nav-logo">LC</a>
 
@@ -42,7 +45,7 @@
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">☰</button>
  </nav>
 
- <!-- Mobile menu -->
+  
  <div id="mobileMenu" class="mobile-menu">
     <a href="#skills"  onclick="toggleMenu()">Skills</a>
     <a href="#projects" onclick="toggleMenu()">Progetti</a>
@@ -50,63 +53,65 @@
     <a href="mailto:casaloneluca7@gmail.com">Email</a>
     <a href="https://github.com/" target="_blank" >GitHub</a>
     <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-</div>
+</div> -->
 
-<!-- Hero Section -->
-<section id="hero">
+<!-- <section id="hero">
     <div class="hero-left">
         <div class="hero-tag reveal">Disponibile per opportunità</div>
         <h1 class="hero-name reveal">Luca<br>Casalone</h1>
         <div class="hero-title reveal">Junior Web Developer</div>
-        <div class="hero-photo-wrap">
-          <img src="{{ asset('img/me.jpg') }}" alt="Luca Casalone" class="hero-photo">
-        </div>
         <p class="hero-desc reveal">
-        Sviluppo siti web e applicazioni moderne, con attenzione alla struttura del codice,
-        all'esperienza utente e alle performance. Specializzato nello stack PHP/Laravel + JavaScript.
+            Sviluppo siti web e applicazioni moderne, specializzato nello stack 
+            PHP/Laravel + JavaScript. Organizzato, puntuale e abituato a lavorare 
+            in team — qualità affinate in anni di ristorazione, dove problem solving 
+            e collaborazione erano all'ordine del giorno.
         </p>
         <div class="hero-cta reveal">
-        <a href="#projects" class="btn-primary">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            Vedi i progetti
-        </a>
-        <a href="#percorso" class="btn-secondary">Il mio percorso →</a>
+            <a href="#projects" class="btn-primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                Vedi i progetti
+            </a>
+            <a href="#percorso" class="btn-secondary">Il mio percorso →</a>
         </div>
     </div>
-    <div class="hero-right">
-        <div class="hero-card reveal">
-            <div class="hero-card-label">// Stack tecnologico</div>
-            <div class="hero-stack">
-                <span class="tag amber">PHP</span>
-                <span class="tag amber">Laravel</span>
-                <span class="tag amber">JavaScript</span>
-                <span class="tag amber">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">Bootstrap</span>
-                <span class="tag">Tailwind CSS</span>
-                <span class="tag amber">MySQL</span>
-            </div>
-            <div class="hero-stat">
-                <span class="stat-label">// Formazione</span>
-                <span class="stat-value">Aulab Hackademy</span>
-            </div>
-            <div class="hero-stat">
-                <span class="stat-label">// Attestato</span>
-                <span class="stat-value">Full Stack Web Developer Junior</span>
-            </div>
-            <div class="hero-stat">
-                <span class="stat-label">// Progetti Attivi</span>
-                <span class="stat-value">4 in sviluppo</span>
-            </div>
-            <div class="hero-stat">
-                <span class="stat-label">// Posizione</span>
-                <span class="stat-value">Italia, Torino</span>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Skills Section -->
+    <div class="hero-right">
+        <img src="{{ asset('img/sorriso1.jpg') }}" alt="Luca Casalone" class="hero-photo">
+    </div>
+</section> -->
+
+<!-- Stack bar separata 
+<div class="hero-stack-bar">
+    <span class="stack-bar-label">// stack</span>
+    <div class="stack-bar-tags">
+        <span class="tag amber">PHP</span>
+        <span class="tag amber">Laravel</span>
+        <span class="tag amber">JavaScript</span>
+        <span class="tag amber">MySQL</span>
+        <span class="tag amber">Python</span>
+        <span class="tag amber">Vue.js</span>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">Bootstrap</span>
+        <span class="tag">Tailwind CSS</span>
+    </div>
+    <div class="hero-stats-inline">
+        <div class="stat-inline">
+            <span class="stat-label">// Formazione</span>
+            <span class="stat-value">Aulab Hackademy</span>
+        </div>
+        <div class="stat-inline">
+            <span class="stat-label">// Attestato</span>
+            <span class="stat-value">Full Stack Dev Junior</span>
+        </div>
+        <div class="stat-inline">
+            <span class="stat-label">// Posizione</span>
+            <span class="stat-value">Torino, Italia 🇮🇹</span>
+        </div>
+    </div>
+</div> -->
+
+<!-- Skills Section
 <section id="skills">
   <div class="section-header">
     <div class="section-num">01</div>
@@ -129,6 +134,16 @@
       <div class="skill-cat">Frontend / Logica</div>
     </div>
     <div class="skill-item reveal">
+      <div class="skill-header"><span class="skill-name">Python</span><span class="skill-pct">60%</span></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+      <div class="skill-cat">Backend</div>
+    </div>
+    <div class="skill-item reveal">
+      <div class="skill-header"><span class="skill-name">Vue.js</span><span class="skill-pct">45%</span></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="45"></div></div>
+      <div class="skill-cat">Frontend</div>
+    </div>
+    <div class="skill-item reveal">
       <div class="skill-header"><span class="skill-name">MySQL</span><span class="skill-pct">72%</span></div>
       <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
       <div class="skill-cat">Database</div>
@@ -149,9 +164,9 @@
       <div class="skill-cat">UI Framework</div>
     </div>
   </div>
-</section>
+</section> -->
 
-<!-- Projects Section -->
+<!-- Projects Section 
 <section id="projects">
     <div class="section-header">
         <div class="section-num">02</div>
@@ -212,15 +227,30 @@
     </div>
     </div>
     </div>
-</section>
+</section>  -->
 
-<!-- Percorso -->
+<!-- Percorso
 <section id="percorso">
     <div class="section-header">
     <div class="section-num">03</div>
     <h2 class="section-title">Percorso</h2>
   </div>
   <div class="timeline">
+
+    <div class="timeline-item reveal">
+        <div class="timeline-date">~2012<br>→ 2025</div>
+        <div class="timeline-body">
+            <div class="timeline-org">Settore Alberghiero</div>
+            <div class="timeline-role">Operatore di Sala & Team Leader</div>
+            <p class="timeline-desc">
+                Tredici anni nel settore hospitality, con ruoli di crescente responsabilità. 
+                Gestione del servizio in ambienti ad alto ritmo, coordinamento del team e 
+                problem solving quotidiano. Un'esperienza che ha formato un approccio al lavoro 
+                basato su organizzazione, puntualità e attenzione al cliente — valori che porto 
+                direttamente nello sviluppo web.
+            </p>
+        </div>
+    </div>
 
     <div class="timeline-item reveal">
       <div class="timeline-date">Sett 2021<br>→ Mar 2022</div>
@@ -241,9 +271,9 @@
     </div>
 
   </div>
-</section>
+</section>  -->
 
-<!-- contatto -->
+<!-- contatto
 <section id="contatto"> 
    <div class="section-header">
     <div class="section-num">04</div>
@@ -260,7 +290,7 @@
         <div class="ci-icon">✉</div>
         <div>
           <div class="ci-label">Email</div>
-          <div class="ci-value">luca@example.com</div>
+          <div class="ci-value">casaloneluca7@gmail.com</div>
         </div>
       </div>
       <div class="contact-info-item">
@@ -329,15 +359,15 @@
 
   </div>
 
-<!-- Footer -->
+ Footer 
 <footer>
-  <span class="footer-copy">© {{ date('Y') }} Luca Casalone — Junior Web Developer</span>
+  <span class="footer-copy">© 2026 Luca Casalone — Junior Web Developer</span>
   <div class="footer-links">
     <a href="#hero">Top ↑</a>
-    <a href="https://github.com/"   target="_blank">GitHub</a>
-    <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/luca927"   target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/luca-casalone-a85a7413b" target="_blank" class="nav-icon" title="LinkedIn">LinkedIn</a>
   </div>
-</footer>
+</footer> -->
 
 
 </body>
