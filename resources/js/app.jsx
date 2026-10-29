@@ -21,15 +21,10 @@ function App() {
             <Timeline />
             <ContactForm />
             <Footer />
-            {/* Qui metteremo gli altri pezzi man mano */}
         </div>
     );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('portfolio'));
-root.render(<App />);
-
-// 2. ESEGUI il render (Servi a tavola)
 const container = document.getElementById('portfolio');
 
 if (container) {

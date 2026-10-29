@@ -9,3 +9,9 @@
 /.github export-ignore
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
+
+# Tratta i file Blade come HTML (o ignorali se sono vuoti)
+*.blade.php linguist-detectable=false
+
+# Assicurati che JSX sia contato bene
+*.jsx linguist-language=JavaScript

@@ -17,7 +17,7 @@ class ContactController extends Controller
 
         // Invia email — configura MAIL_* in .env
         Mail::send([], [], function ($mail) use ($validated) {
-            $mail->to('luca@example.com')          // ← la tua email
+            $mail->to('casaloneluca7@gmail.com')          // ← la tua email
                  ->from($validated['email'], $validated['nome'])
                  ->subject('Nuovo messaggio dal portfolio')
                  ->text(
@@ -27,6 +27,8 @@ class ContactController extends Controller
                  );
         });
 
-        return back()->with('success', 'Messaggio inviato! Ti rispondo al più presto.');
+        return response()->json([
+            'message' => 'Messaggio inviato! Ti rispondo al più presto.'
+            ], 200);
     }
 }

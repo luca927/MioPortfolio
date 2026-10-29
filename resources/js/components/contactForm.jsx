@@ -5,34 +5,28 @@ import useReveal from '../hooks/useReveal';
 export default function ContactForm() {
     useReveal();
 
-    // 1. Stati per i campi del form
     const [formData, setFormData] = useState({
         nome: '',
         email: '',
         messaggio: ''
     });
 
-    // 2. Stati per messaggi di successo o errore
     const [status, setStatus] = useState({ type: '', msg: '' });
     const [loading, setLoading] = useState(false);
 
-    // 3. Gestore del cambiamento degli input
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    // 4. Invio del form
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
         setStatus({ type: '', msg: '' });
 
         try {
-            // Inviamo i dati alla rotta Laravel (deve esistere nel file web.php o api.php)
             const response = await axios.post('/contatto', formData);
-            
             setStatus({ type: 'success', msg: 'Messaggio inviato con successo! ✓' });
-            setFormData({ nome: '', email: '', messaggio: '' }); // Reset del form
+            setFormData({ nome: '', email: '', messaggio: '' });
         } catch (error) {
             setStatus({ 
                 type: 'error', 
@@ -46,16 +40,15 @@ export default function ContactForm() {
     return (
         <section id="contatto" className="reveal">
             <div className="section-header">
-                <div className="section-num">04</div>
-                <h2 className="section-title">Contatto</h2>
+                 <div className="section-num">04 // PARLIAMO</div>
+                <h2 className="section-title">Contatto & Collaborazioni</h2>
             </div>
 
             <div className="contact-section-inner">
                 <div className="contact-left">
                     <p className="contact-intro">
-                        Hai un progetto in mente? Scrivimi, rispondo solitamente entro 24 ore.
+                        Hai un progetto in mente o cerchi un developer motivato per il tuo team? Scrivimi, rispondo solitamente entro 24 ore.
                     </p>
-                    {/* Qui puoi rimettere i tuoi div contact-info-item con le icone SVG */}
                 </div>
 
                 <div className="contact-right">
